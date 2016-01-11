@@ -11,8 +11,10 @@ var pass = {
 
 prompt.start();
 
+console.log('Insert your TMB API passwords:');
+
 prompt.get(['developer', 'publish'], function (err, result) {
-    console.log('Command-line input received:');
+    console.log('Passwords you have writed:');
     console.log('  developer: ' + result.developer);
     console.log('  publish: ' + result.publish);
 

@@ -13,6 +13,7 @@
   "author": "Micho Garc&iacutea <micho.garcia@geomati.co> (http://geomati.co)",
   "license": "MIT",
   "dependencies": {
+    "jsonfile": "^2.2.3",
     "prompt": "^0.2.14"
   }
 }

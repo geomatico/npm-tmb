@@ -4,6 +4,8 @@ var fs = require('fs'),
     prompt = require('prompt'),
     jsonfile = require('jsonfile');
 
+
+
 var pass = {
     "developer": {
         "app_id": "here your developer app ID",
@@ -34,31 +36,33 @@ var schema = {
     }
 };
 
-prompt.start();
+var Create = function() {
 
-console.log('Insert your TMB API passwords:');
+    prompt.start();
 
-prompt.get(schema, function (err, result) {
+    console.log('Insert your TMB API passwords:');
 
-    pass.developer.app_id = result.developer_app_id;
-    pass.developer.app_key = result.developer_app_key;
-    if (result.publish_app_id) {
-        pass.publish.app_id = result.publish_app_id;
-    } else {
-        pass.publish.app_id = result.developer_app_id
-    }
-    if (result.publish_app_key) {
-        pass.publish.app_key = result.publish_app_key;
-    } else {
-        pass.publish.app_key = result.developer_app_key
-    }
+    prompt.get(schema, function (err, result) {
 
-    jsonfile.writeFile('./pass.json', pass, function (err) {
-        if (err) {
-            console.error(err);
+        pass.developer.app_id = result.developer_app_id;
+        pass.developer.app_key = result.developer_app_key;
+        if (result.publish_app_id) {
+            pass.publish.app_id = result.publish_app_id;
+        } else {
+            pass.publish.app_id = result.developer_app_id
         }
+        if (result.publish_app_key) {
+            pass.publish.app_key = result.publish_app_key;
+        } else {
+            pass.publish.app_key = result.developer_app_key
+        }
+
+        jsonfile.writeFile('./pass.json', pass, function (err) {
+            if (err) {
+                console.error(err);
+            }
+        });
     });
-});
+};
 
-
-
+module.exports = Create;

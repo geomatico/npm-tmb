@@ -4,7 +4,7 @@
   "description": "A npm tool to manage TMB API Passwords",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/jasmine-node spec"
   },
   "keywords": [
     "passwords",
@@ -13,6 +13,7 @@
   "author": "Micho Garc&iacutea <micho.garcia@geomati.co> (http://geomati.co)",
   "license": "MIT",
   "dependencies": {
+    "jasmine-node": "^1.14.5",
     "jsonfile": "^2.2.3",
     "prompt": "^0.2.14"
   }

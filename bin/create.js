@@ -2,9 +2,8 @@
 
 var fs = require('fs'),
     prompt = require('prompt'),
-    jsonfile = require('jsonfile');
-
-
+    jsonfile = require('jsonfile'),
+    userHome = require('user-home');
 
 var pass = {
     "developer": {
@@ -42,7 +41,9 @@ var Create = {
 
         prompt.start();
 
-        console.log('Insert your TMB API passwords:');
+        var path = (options && options.path) ? options.path : userHome;
+        console.info("Your pass.json file will be saved in: " + path + '/pass.json');
+        console.info('Insert your TMB API passwords:');
 
         var schema = (options && options.schema) ? options.schema : schemaDefault;
 
@@ -61,14 +62,15 @@ var Create = {
                 pass.publish.app_key = result.developer_app_key
             }
 
-            jsonfile.writeFile('./pass.json', pass, function (err) {
+
+            jsonfile.writeFile(path + '/pass.json', pass, function (err) {
                 if (err) {
                     console.error(err);
                 }
             });
+
         });
     }
-
 };
 
 module.exports = Create;

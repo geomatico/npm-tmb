@@ -1,0 +1,2 @@
+Lorem ipsum dolor sit amet, <developer.app_id> consectetur adipiscing elit. <developer.app_key>
+Proin id tincidunt urna. Nullam commodo lobortis est, <publish.app_id> faucibus sagittis ligula mollis at <publish.app_key>

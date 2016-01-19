@@ -14,7 +14,6 @@
   "license": "MIT",
   "dependencies": {
     "fs-extra": "^0.26.4",
-    "jasmine-node": "^1.14.5",
     "jsonfile": "^2.2.3",
     "prompt": "^0.2.14",
     "read-data": "^0.3.0",
@@ -24,5 +23,8 @@
   "bin": {
     "create": "bin/create.js",
     "replace": "bin/replace.js"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
   }
 }

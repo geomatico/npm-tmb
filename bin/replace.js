@@ -4,28 +4,31 @@ var json = require('read-data').json;
 var replace = require("replace"),
     userHome = require('user-home');
 
-var Read = {
+var args = process.argv.slice(2);
 
-    replace: function(options) {
+var replacePath = args[0];
+var passPath = args[1];
+var recursive = args[2];
 
-            var passPath = (options && options.passPath) ? options.passPath : userHome;
-            var data = json.sync(passPath + '/pass.json');
+var path = (passPath) ? passPath : userHome;
+var data = json.sync(path + '/pass.json');
 
-        var recursive = (options && options.recursive) ? options.recursive : false;
+console.info("Your pass.json file will be readed from: " + path + '/pass.json');
 
-            for (var group in data) {
-                for (var pass in data[group]) {
-                    var toReplace = group + '.' + pass;
-                    console.info("Replacing: " + toReplace + " by: " + data[group][pass]);
-                    replace({
-                        regex: "<" + toReplace + ">",
-                        replacement: data[group][pass],
-                        paths: [options.path],
-                        recursive: recursive
-                    })
-                }
-            }
+if (replacePath) {
+    for (var group in data) {
+        for (var pass in data[group]) {
+            var toReplace = group + '.' + pass;
+            console.info("Replacing: " + toReplace + " by: " + data[group][pass]);
+            replace({
+                regex: "<" + toReplace + ">",
+                replacement: data[group][pass],
+                paths: [replacePath],
+                recursive: (recursive) ? recursive : false
+            })
         }
-};
+    }
+} else {
+    return console.error("Please, write directory or file to replace");
+}
 
-module.exports = Read;

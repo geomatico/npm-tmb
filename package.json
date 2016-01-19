@@ -20,5 +20,9 @@
     "read-data": "^0.3.0",
     "replace": "^0.3.0",
     "user-home": "^2.0.0"
+  },
+  "bin": {
+    "create": "bin/create.js",
+    "replace": "bin/replace.js"
   }
 }

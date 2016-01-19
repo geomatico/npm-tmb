@@ -35,42 +35,32 @@ var schemaDefault = {
     }
 };
 
-var Create = {
+var args = process.argv.slice(2);
 
-    create : function(options) {
+prompt.start();
 
-        prompt.start();
+var path = (args && args[0]) ? args[0] : userHome;
+console.info("Your pass.json file will be saved in: " + path + '/pass.json');
+console.info('Insert your TMB API passwords:');
 
-        var path = (options && options.path) ? options.path : userHome;
-        console.info("Your pass.json file will be saved in: " + path + '/pass.json');
-        console.info('Insert your TMB API passwords:');
+prompt.get(schemaDefault, function (err, result) {
 
-        var schema = (options && options.schema) ? options.schema : schemaDefault;
-
-        prompt.get(schema, function (err, result) {
-
-            pass.developer.app_id = result.developer_app_id;
-            pass.developer.app_key = result.developer_app_key;
-            if (result.publish_app_id) {
-                pass.publish.app_id = result.publish_app_id;
-            } else {
-                pass.publish.app_id = result.developer_app_id
-            }
-            if (result.publish_app_key) {
-                pass.publish.app_key = result.publish_app_key;
-            } else {
-                pass.publish.app_key = result.developer_app_key
-            }
-
-
-            jsonfile.writeFile(path + '/pass.json', pass, function (err) {
-                if (err) {
-                    console.error(err);
-                }
-            });
-
-        });
+    pass.developer.app_id = result.developer_app_id;
+    pass.developer.app_key = result.developer_app_key;
+    if (result.publish_app_id) {
+        pass.publish.app_id = result.publish_app_id;
+    } else {
+        pass.publish.app_id = result.developer_app_id
     }
-};
+    if (result.publish_app_key) {
+        pass.publish.app_key = result.publish_app_key;
+    } else {
+        pass.publish.app_key = result.developer_app_key
+    }
 
-module.exports = Create;
+    jsonfile.writeFile(path + '/pass.json', pass, function (err) {
+        if (err) {
+            console.error(err);
+        }
+    });
+});

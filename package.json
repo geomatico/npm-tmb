@@ -18,7 +18,6 @@
     "jsonfile": "^2.2.3",
     "prompt": "^0.2.14",
     "read-data": "^0.3.0",
-    "read-file": "^0.2.0",
     "replace": "^0.3.0",
     "user-home": "^2.0.0"
   }

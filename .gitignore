@@ -1,4 +1,3 @@
 node_modules/*
 .idea/*
-spec/fixtures/pass.json
 spec/textReplace.txt

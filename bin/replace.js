@@ -6,7 +6,7 @@ var replace = require("replace"),
 
 var Read = {
 
-    read: function(options) {
+    replace: function(options) {
 
             var passPath = (options && options.passPath) ? options.passPath : userHome;
             var data = json.sync(passPath + '/pass.json');

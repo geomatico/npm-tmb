@@ -7,8 +7,8 @@ var replace = require("replace"),
 var args = process.argv.slice(2);
 
 var replacePath = args[0];
-var passPath = args[1];
-var recursive = args[2];
+var recursive = args[1];
+var passPath = args[2];
 
 var path = (passPath) ? passPath : userHome;
 

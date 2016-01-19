@@ -1,7 +1,6 @@
-var create = require("../bin/create.js");
-var replace = require("../bin/replace.js");
 var fsextra = require("fs-extra"),
-    userHome = require('user-home');
+    userHome = require('user-home'),
+    exec = require('child_process').exec;
 
 var result = null;
 
@@ -14,20 +13,24 @@ function makeReplace(done) {
             if (err) {
                 return console.error('Oh no, there was an error: ' + err.message);
             }
-            replace.replace({
-                path: "./spec/textReplace.txt"
-            });
-            fsextra.readFile('./spec/textReplace.txt', 'utf8', function (err,data) {
-                if (err) {
-                    return console.log(err);
+            exec('node bin/replace.js "./spec/textReplace.txt"', function(error, stdout, stderr) {
+                console.log('stdout: ' + stdout);
+                fsextra.readFile('./spec/textReplace.txt', 'utf8', function (err,data) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                    result = {
+                        fake_developer_id: data.indexOf('fake_developer_id'),
+                        fake_developer_key: data.indexOf('fake_developer_key'),
+                        fake_publish_id: data.indexOf('fake_publish_id'),
+                        fake_publish_key: data.indexOf('fake_publish_key')
+                    };
+                    done();
+                });
+                console.log('stderr: ' + stderr);
+                if (error !== null) {
+                    console.log('exec error: ' + error);
                 }
-                result = {
-                    fake_developer_id: data.indexOf('fake_developer_id'),
-                    fake_developer_key: data.indexOf('fake_developer_key'),
-                    fake_publish_id: data.indexOf('fake_publish_id'),
-                    fake_publish_key: data.indexOf('fake_publish_key')
-                };
-                done();
             });
         });
     })

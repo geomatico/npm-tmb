@@ -11,7 +11,13 @@ var passPath = args[1];
 var recursive = args[2];
 
 var path = (passPath) ? passPath : userHome;
-var data = json.sync(path + '/pass.json');
+
+try {
+    var data = json.sync(path + '/pass.json');
+} catch (err) {
+    console.info("Please, create your pass.json file before execute this command. Error message: ");
+    return console.error(err);
+}
 
 console.info("Your pass.json file will be readed from: " + path + '/pass.json');
 
@@ -29,6 +35,6 @@ if (replacePath) {
         }
     }
 } else {
-    return console.error("Please, write directory or file to replace");
+    return console.error("Please, write directory path or file path to replace: node replace 'your/folder/to/replace'");
 }
 

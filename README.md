@@ -1,10 +1,10 @@
-# npm-tmb
-> npm utility to manage TMB APIs
+# password-simple-manager
+> utility to manage password APIs, getting this from an external fil created with this utility too
 
 Install with [npm](https://www.npmjs.com/)
 
 ```sh
-$ npm i npm-tmb --save
+$ npm i password-simple-manager --save-dev
 ```
 
 ## Usage

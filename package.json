@@ -1,8 +1,8 @@
 {
-  "name": "npm-tmb",
-  "version": "1.0.0",
-  "description": "A npm tool to manage TMB API Passwords",
-  "main": "index.js",
+  "name": "password-simple-manager",
+  "version": "0.0.1",
+  "description": "A npm tool to manage passwords from a external file",
+  "main": "bin/create.js",
   "scripts": {
     "test": "./node_modules/.bin/jasmine-node spec"
   },

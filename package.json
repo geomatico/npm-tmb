@@ -1,6 +1,6 @@
 {
   "name": "password-simple-manager",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A npm tool to manage passwords from a external file",
   "main": "bin/create.js",
   "scripts": {

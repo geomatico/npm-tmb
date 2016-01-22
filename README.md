@@ -8,10 +8,19 @@ $ npm install password-simple-manager --save-dev
 ```
 
 ## Usage
+
+This utility replace the tags:
+* &lt;developer.app_key&gt;
+* &lt;developer.app_id&gt;
+* &lt;publish.app_key&gt;
+* &lt;publish.app_id&gt;
+
+by values from the pass.json file
+
 ### Create pass.json file
 To create your pass.json file:
 
-(Optional). Make a symbolic link to use from shell directly. Run npm link from the password-simple-manager root folder 
+(Optional). Make a symbolic link to use from shell directly. Run npm link from the password-simple-manager root folder
 
 ```sh 
 $ sudo npm link

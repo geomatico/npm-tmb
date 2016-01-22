@@ -1,0 +1,30 @@
+{
+  "name": "password-simple-manager",
+  "version": "1.0.0",
+  "description": "A npm tool to manage passwords from a external file",
+  "main": "bin/create.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node spec"
+  },
+  "keywords": [
+    "passwords",
+    "manager"
+  ],
+  "author": "Micho Garc&iacutea <micho.garcia@geomati.co> (http://geomati.co)",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^0.26.4",
+    "jsonfile": "^2.2.3",
+    "prompt": "^0.2.14",
+    "read-data": "^0.3.0",
+    "replace": "^0.3.0",
+    "user-home": "^2.0.0"
+  },
+  "bin": {
+    "create": "bin/create.js",
+    "replace": "bin/replace.js"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}

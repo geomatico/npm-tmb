@@ -26,7 +26,7 @@ To create your pass.json file:
 $ sudo npm link
 ```
 
-Create pass.json, if the link is created run,
+Create pass.json, if the link is created, run:
 
 ```sh
 $ create
@@ -43,7 +43,7 @@ or
 **Optional**
 Default: userHome
 
-As default the pass.json file will be created in the user home. If you don't want use this directory to save the pass.json file, you must to indicate it with this parameter
+As default the pass.json file will be created in the user home. If you don't want use this directory to save the pass.json file, you must indicate it with this parameter
 
 ### Replace pass on file
 

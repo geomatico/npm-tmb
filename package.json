@@ -1,8 +1,8 @@
 {
   "name": "password-simple-manager",
-  "version": "1.0.0",
-  "description": "A npm tool to manage passwords from an external file",
-  "main": "bin/create.js",
+  "version": "1.0.2",
+  "description": "A npm tool to manage passwords from a external file",
+  "main": "bin/create",
   "scripts": {
     "test": "./node_modules/.bin/jasmine-node spec"
   },
@@ -17,16 +17,15 @@
     "jsonfile": "^2.2.3",
     "prompt": "^0.2.14",
     "read-data": "^0.3.0",
-    "replace": "^0.3.0",
-    "user-home": "^2.0.0"
+    "replace": "^0.3.0"
   },
   "repository" :
   { "type" : "git"
   , "url" : "https://github.com/geomatico/password-simple-manager"
   },
   "bin": {
-    "create": "bin/create.js",
-    "replace": "bin/replace.js"
+    "create": "bin/create",
+    "replace": "bin/replace"
   },
   "devDependencies": {
     "jasmine-node": "^1.14.5"

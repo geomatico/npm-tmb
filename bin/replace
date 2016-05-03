@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 var json = require('read-data').json;
-var replace = require("replace"),
-    userHome = require('user-home');
+var replace = require("replace");
 
 var args = process.argv.slice(2);
 
@@ -10,7 +9,7 @@ var replacePath = args[0];
 var recursive = args[1];
 var passPath = args[2];
 
-var path = (passPath) ? passPath : userHome;
+var path = (passPath) ? passPath : '.';
 
 try {
     var data = json.sync(path + '/pass.json');

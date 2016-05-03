@@ -41,9 +41,9 @@ or
 #### Options
 ##### path_to_pass_json
 **Optional**
-Default: userHome
+Default: .
 
-As default the pass.json file will be created in the user home. If you don't want use this directory to save the pass.json file, you must to indicate it with this parameter
+As default the pass.json file will be created in this root folder. If you don't want use this directory to save the pass.json file, you must to indicate it with this parameter
 
 ### Replace pass on file
 
@@ -74,7 +74,7 @@ If you point to a folder use recursive = *true*
 ##### path_to_pass_json
 **Optional**
 Type: string
-Default: userHome
+Default: .
 
 If pass.json file has been created in other folder, you will need point to this file using this parameter
 

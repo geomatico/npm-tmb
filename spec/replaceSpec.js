@@ -13,7 +13,7 @@ function makeReplace(done) {
             if (err) {
                 return console.error('Oh no, there was an error: ' + err.message);
             }
-            exec('node bin/replace.js "./spec/textReplace.txt"', function(error, stdout, stderr) {
+            exec('node bin/replace "./spec/textReplace.txt"', function(error, stdout, stderr) {
                 console.log('stdout: ' + stdout);
                 fsextra.readFile('./spec/textReplace.txt', 'utf8', function (err,data) {
                     if (err) {

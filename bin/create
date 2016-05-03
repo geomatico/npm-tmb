@@ -2,8 +2,7 @@
 
 var fs = require('fs'),
     prompt = require('prompt'),
-    jsonfile = require('jsonfile'),
-    userHome = require('user-home');
+    jsonfile = require('jsonfile');
 
 var pass = {
     "developer": {
@@ -39,7 +38,7 @@ var args = process.argv.slice(2);
 
 prompt.start();
 
-var path = (args && args[0]) ? args[0] : userHome;
+var path = (args && args[0]) ? args[0] : '.';
 console.info("Your pass.json file will be saved in: " + path + '/pass.json');
 console.info('Insert your TMB API passwords:');
 

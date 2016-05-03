@@ -1,11 +1,10 @@
 var fsextra = require("fs-extra"),
-    userHome = require('user-home'),
     exec = require('child_process').exec;
 
 var result = null;
 
 function makeReplace(done) {
-    fsextra.copy('./spec/fixtures/pass.json', userHome + '/pass.json', function(err) {
+    fsextra.copy('./spec/fixtures/pass.json', './pass.json', function(err) {
         if (err) {
             return console.error('Oh no, there was an error: ' + err.message);
         }
@@ -13,7 +12,7 @@ function makeReplace(done) {
             if (err) {
                 return console.error('Oh no, there was an error: ' + err.message);
             }
-            exec('node bin/replace.js "./spec/textReplace.txt"', function(error, stdout, stderr) {
+            exec('node bin/replace "./spec/textReplace.txt"', function(error, stdout, stderr) {
                 console.log('stdout: ' + stdout);
                 fsextra.readFile('./spec/textReplace.txt', 'utf8', function (err,data) {
                     if (err) {

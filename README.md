@@ -35,15 +35,15 @@ $ create
 or 
 
 ```sh
-~/your_project$ node node_modules/password-simple-manager/bin/create.js
+~/your_project$ node node_modules/password-simple-manager/bin/create
 ```
 
 #### Options
 ##### path_to_pass_json
 **Optional**
-Default: userHome
+Default: .
 
-As default the pass.json file will be created in the user home. If you don't want use this directory to save the pass.json file, you must indicate it with this parameter
+As default the pass.json file will be created in this root folder. If you don't want use this directory to save the pass.json file, you must to indicate it with this parameter
 
 ### Replace pass on file
 
@@ -54,7 +54,7 @@ $ replace path_to_files recursive
 or 
 
 ```sh
-~/your_project$ node node_modules/password-simple-manager/bin/replace.js path_to_files recursive
+~/your_project$ node node_modules/password-simple-manager/bin/replace path_to_files recursive
 ```
 
 #### Options
@@ -74,7 +74,7 @@ If you point to a folder use recursive = *true*
 ##### path_to_pass_json
 **Optional**
 Type: string
-Default: userHome
+Default: .
 
 If pass.json file has been created in other folder, you will need point to this file using this parameter
 
@@ -85,8 +85,8 @@ In the package.json:
 ```js
   ...,
   "scripts": {
-    "create": "node node_modules/npm-tmb/bin/create.js",
-    "replace": "node node_modules/npm-tmb/bin/replace.js '<path/to/replace>' <recursive>"
+    "create": "node node_modules/npm-tmb/bin/create",
+    "replace": "node node_modules/npm-tmb/bin/replace '<path/to/replace>' <recursive>"
   },
   ...
   ```

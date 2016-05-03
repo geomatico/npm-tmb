@@ -35,7 +35,7 @@ $ create
 or 
 
 ```sh
-~/your_project$ node node_modules/password-simple-manager/bin/create.js
+~/your_project$ node node_modules/password-simple-manager/bin/create
 ```
 
 #### Options
@@ -54,7 +54,7 @@ $ replace path_to_files recursive
 or 
 
 ```sh
-~/your_project$ node node_modules/password-simple-manager/bin/replace.js path_to_files recursive
+~/your_project$ node node_modules/password-simple-manager/bin/replace path_to_files recursive
 ```
 
 #### Options
@@ -85,8 +85,8 @@ In the package.json:
 ```js
   ...,
   "scripts": {
-    "create": "node node_modules/npm-tmb/bin/create.js",
-    "replace": "node node_modules/npm-tmb/bin/replace.js '<path/to/replace>' <recursive>"
+    "create": "node node_modules/npm-tmb/bin/create",
+    "replace": "node node_modules/npm-tmb/bin/replace '<path/to/replace>' <recursive>"
   },
   ...
   ```

@@ -28,7 +28,7 @@ if (replacePath) {
             replace({
                 regex: "<" + toReplace + ">",
                 replacement: data[group][pass],
-                paths: [replacePath],
+                paths: [replacePath.replace(/'/g,'')],
                 recursive: (recursive) ? recursive : false
             })
         }
